@@ -281,30 +281,94 @@
                     <option value="female">Femenino</option>
                     <option value="male">Masculino</option>
                     <option value="other">Otro</option>
-                    
                 </select>
             </div>
-            <br>
-            <input id="ageInput" name="ageInput" type="number" value="42" min="0" max="120">
+            <br><br>
+
+            <div class="inputBlock">
+                <label for="ageInput">Edad</label>
+                <input id="ageInput" name="ageInput" value="30" type="number" min="0" max="120">
+
+                <label for="birthdayInput">Fecha de nacimiento</label>
+                <input type="date" id="birthdayInput" name="birthdayInput">
+            </div>
+
+            <fieldset>
+                <div class="inputBlock">
+                    <label for="carBrandsInput">La marca de tu coche</label>
+                    <input id="carBrandsInput" name="carBrandsInput" list="carBrandsList" >
+                    <datalist id="carBrandslList">
+                        <option value="bmw"></option>BMW</option>
+                        <option value="Mercdes">Mercedes</option>
+                        <option value="Mustang">Mustang</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                    </datalist>
+                </div><br>
+            </fieldset>
+            <!-- Si pongo arriba <fieldset disabled> no se podria rellenar nada -->
+
+            <fieldset>
+                <legend>Estado Civil</legend>
+                <div>
+                    <input type="radio" name="civilState" id="madrriedInput">
+                    <label for="marriedInput">Casado</label>
+                </div>
+                <div>
+                    <input type="radio" name="civilState" id="singleInput" checked>
+                    <label for="singleInput">Soltero</label>
+                </div>
+                <div>
+                    <input type="radio" name="civilState" id="divorcedInput">
+                    <label for="divorcedInput">Divorciado</label>
+                </div>
+
+                <!-- El "checked" me deja seleccionado alguno hasta que el ususario lo cambie. Tambien se puede
+                usar "Required" -->
+            </fieldset>
+
+            <!-- <input id="ageInput" name="ageInput" type="number" value="42" min="0" max="120">
             <input type="submit" value="Guardar"> <br><br>
             <input id="ageInput" name="ageInput" value="30" type="numer" min="0" max="31">
-            <input type="date">
+            <input type="date"> -->
+
+            <fieldset>
+                <legend>Productos</legend>
+                <div>
+                    <input type="checkbox" name="iphoneProduct" id="iphoneProduct">
+                    <label for="iphoneProduct">iphone</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="macbookProduct" id="macbookProduct">
+                    <label for="macbookProduct">Macbook</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="airpodsProduct" id="airpodsProduct">
+                    <label for="airpodsProduct">Airpods</label>
+                </div>            
+            </fieldset>
+
+            <label for="rangeInput">Seleccione cantidad de elementos</label>
+            <input type="range" name="rangeInput" id="rangeInput">
+
+            <label for="">Cantidad de gasolina</label>
+            <meter min="0" max="100" id="fuelLevel" value="60"></meter>
+
+            <progress max="100" value="33"></progress>
+            <br><br><br>
+
+            <label for="fileInput">Subir un archivo</label>
+            <input type="file" id="fileInput" name="fileInput"  value="test">
+            <br><br><br>
 
 
-            
-
+            <input type="submit" value="Guardar">
+            <input type="reset" value="Limpiar formulario">
         </form>
-          
+        <!-- Estos dos botones si los pusiera fuera del formulario no harían nada: -->
+            <input type="submit" value="Guardar">
+            <input type="reset" value="Limpiar formulario">
    
-       
-       
-
-
-
-        
-
-
-
     
         <br><br><br><br><br><br><br>
 
