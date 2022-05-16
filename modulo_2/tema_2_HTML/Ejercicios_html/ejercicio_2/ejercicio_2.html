@@ -15,12 +15,12 @@
                
                 <div class="inputBlock">
                     <label for="nameinput">Nombre:</label>
-                    <input type="text" id="nameinput" name="userName" placeholder="Introduce tu nombre">
+                    <input type="text" id="nameinput" name="userName" placeholder="Elon">
                 </div>
                 <br>
                 <div class="inputBlock">
-                    <label for="nameinput">Apellidos:</label>
-                    <input type="text" id="nameinput" name="userName" placeholder="Introduce tus apellidos">
+                    <label for="lastnameinput">Apellidos:</label>
+                    <input type="text" id="lastnameinput" name="userLastName" placeholder="Musk">
                 </div>
                 <br>
                 <div class="inputBlock">
@@ -36,15 +36,15 @@
                 <fieldset>
                     <legend>Género</legend>
                     <div>
-                        <input type="radio" name="generInput   " id="FemenineInput">
+                        <input type="radio" name="genderInput" id="FemenineInput">
                         <label for="FemenineInput">Mujer</label>
                     </div>
                     <div>
-                        <input type="radio" name="generInput" id="MasculineInput">
+                        <input type="radio" name="genderInput" id="MasculineInput">
                         <label for="MasculineInput">Casado</label>
                     </div>
                     <div>
-                        <input type="radio" name="generInput" id="OthersInput">
+                        <input type="radio" name="genderInput" id="OthersInput">
                         <label for="OthersInput">Casado</label>
                     </div>
                 </fieldset>
@@ -56,28 +56,24 @@
                 <br><br>
                 <div class="inputBlock">
                     <label for="languageInput">Lenguaje de programación:</label>
-                    <input type="language" id="languageInput" name="languageuser">
-                    <datalist id="languageList">
-                        <select name="languageInput" id="sexInput">
-                            <option value="" selected hidden></option>
-                            <option value="female">Femenino</option>
-                            <option value="male">Masculino</option>
-                            <option value="other">Otro</option>
-                        </select>
-                    </datalist>
+                   <select name="languageInput" id="sexInput">                       
+                        <option value="Javascript">Javascript</option>
+                        <option value="Phyton">Phyton</option>
+                    </select>
+                    
                 </div><br><br>
                 <fieldset>
                     <legend>Selecciona tu academia favorita</legend>
                     <div>
-                        <input type="radio" name="generInput   " id="Academia1Input" checked>
+                        <input type="radio" name="AcademyInput" id="Academia1Input" checked>
                         <label for="Academia1Input">Code Space Academy</label>
                     </div>
                     <div>
-                        <input type="radio" name="generInput" id="Academia2Input">
+                        <input type="radio" name="AcademyInput" id="Academia2Input">
                         <label for="Academia2Input">Academia 2</label>
                     </div>
                     <div>
-                        <input type="radio" name="generInput" id="Academia3Input">
+                        <input type="radio" name="AcademyInput" id="Academia3Input">
                         <label for="Academia3Input">Academia 3</label>
                     </div>
                 </fieldset>
@@ -93,8 +89,8 @@
         </div>
 
         <br><br>
-        <input type="submit" value="Guardar">
-        <input type="reset" value="Limpiar formulario">
+        <input type="submit" value="Guardar" required>
+        <input type="reset" value="Limpiar formulario" required>
 
 
 
