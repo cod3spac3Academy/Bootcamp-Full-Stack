@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="../ejercicio_5/elephant.jpeg" alt="Logo de empresa">
+        <a href="ejercicio_5.html"><img src="../ejercicio_5/elephant.jpeg" alt="Logo de empresa"></a>
         <br><br><br>
         <a href="iniciar_sesion.html" target="_blank">Iniciar sesión</a>&nbsp;
         <a href="servicios.html" target="_blank">Servicios</a>&nbsp;
@@ -26,14 +26,18 @@
     <p>Si ya estás registrado, introduce tu usuario y contraseña:</p><br>
     <form action=""  method="get">
         <div>
-            <label for="emailInput">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="emailInput" required>Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="email" id="emailInput" name="userEmail" placeholder="Introduce tu email" required  ><br>
            <br>
-            <label for="">Contraseña</label>
+            <label for="passwInput" required>Contraseña</label>
             <input type="password" id="passwInput" name="userPassw" size="8" placeholder="Introduce tu contraseña"><br>   
         </div><br>
 
-        <button>Inicio de sesión</button>
+        <button>Inicio de sesión</button><br><br><br>
+
+
+        <a href="../ejercicio_5/olvido_contraseña/olvido_contraseña.html" target="_blank">¿has olvidado tu contraseña?</a><br><br>
+        <a href="registro_nuevo.html" target="_blank">Registro de nuevo usuario</a>
 
 
     </form>

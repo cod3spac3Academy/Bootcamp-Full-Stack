@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro nuevo cliente</title>
 </head>
 <body>
+    <header>
+        <a href="ejercicio_5.html"><img src="../ejercicio_5/elephant.jpeg" alt="Logo de empresa"></a>
+        <br><br><br>
+        <a href="iniciar_sesion.html" target="_blank">Iniciar sesión</a>&nbsp;
+        <a href="servicios.html" target="_blank">Servicios</a>&nbsp;
+        <a href="productos.html" target="_blank">Productos</a>&nbsp;
+        <a href="blog.html" target="_blank">Blog</a>
+    </header>
+
     <p>Si no eres usuario, introduce tus datos para registrarte:</p><br>
     <form action="" method="get">
         <div>
@@ -18,11 +27,19 @@
             <input type="text" id="LastnameInput" name="userlastname" placeholder="Introduce tus apellidos"><br>
          </div><br>
          <div>
+             <label for="phoneInput">Teléfono</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <input type="telephone" id="phoneInput" name="userPhone" placeholder="Introduce tu teléfono"><br><br>
+         </div>
+
+
+
+         <div>
              <label for="emailInput">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <input type="text" id="emailInput" name="userEmail" placeholder="Introduce tu email"><br>
+             <input type="text" id="emailInput" name="userEmail" placeholder="Introduce tu email" required><br>
             <br>
              <label for="">Contraseña</label>
-             <input type="text" id="passwInput" name="userPassw" placeholder="Introduce tu contraseña"><br>
+             <input type="text" id="passwInput" name="userPassw" placeholder="Introduce tu contraseña" required><br>
          </div><br>
 
          <button>Submit</button>
