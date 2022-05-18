@@ -1,0 +1,37 @@
+#primero{
+    height: 50vh;
+    background-image:url(../tema_3_CSS/paisaje.jpeg) ;
+    /* center es una y bottom otra, son dos, porque están separadas por un espacio */
+    background-position: left bottom;
+    /* background-attachment: fixed; */
+    /* estos dos de abajo es para que no me repita varias veces la imagenen
+     el caso de que sea más pequeña que el contendor */
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Márgaenes. */
+    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    /* border-bottom: seagreen;
+    border-top: yellow ;
+    border-width: 5px;
+    border-style: dottedsolid; */
+    border: 5px solid seagreen;
+    border-bottom: 15px dotted red;
+    border-style: ;
+}
+
+.empty{
+    height: 2000px;
+    background-color: red;
+}
+
+h1, span{
+    color: purple;
+    border: 5px solid orange;
+}
+
+
