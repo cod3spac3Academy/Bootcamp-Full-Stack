@@ -22,6 +22,18 @@
     border: 5px solid seagreen;
     border-bottom: 15px dotted red;
     border-style: ;
+
+    /* Padding: */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding: 100px 25px 50px 0px; 
+    /* este último padding se pone en sentido de las 
+    agujas del reloj, y esta ultima orden sobreescribe a 
+    las anteriores, porque habla de lo mismo y 
+    recordemos que el código se lee de arriba a abajo */
+
+    /* display: none; */
 }
 
 .empty{
