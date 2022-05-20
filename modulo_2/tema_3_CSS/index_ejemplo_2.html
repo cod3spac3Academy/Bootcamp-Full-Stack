@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,10 @@
 
     <link rel="stylesheet" href="style_ejemplo_2.css">
 </head>
+
 <body>
     <h2>Tipos de Display: none, inline,block, inline-block</h2>
-   <!-- div.box-$*6>p{Lorem ipsum} y me sale lo de abajo: -->
+    <!-- div.box-$*6>p{Lorem ipsum} y me sale lo de abajo: -->
     <div class="box-0">
         <p>Lorem ipsum</p>
     </div>
@@ -32,12 +34,90 @@
     <div class="box-6">
         <p>Lorem ipsum</p>
     </div>
-<div class="parent">
-    <div class="child">test</div>
-</div>
+    <div class="parent">
+        <div class="child">test</div>
+    </div>
 
-<h2>Centrar horizontalmente (eje X)</h2>
-<div class="x-centered"></div>
+    <h2>Centrar horizontalmente (eje X)</h2>
+    <div class="x-centered rectangle"></div>
+
+    <h2>Posición relativa</h2>
+    <div Class="pos-relative rectangle"></div>
+
+
+    <h2>Posición absoluta</h2>
+    <div Class="pos-absolute-parent">
+        <div class="pos-absolute-child"></div>
+    </div>
+
+
+
+
+
+
+    <h2>Posición fijo/fixed (botón fijo)</h2>
+    <div class="pos-fixed">
+        <a href="">Botón fijo</a>
+    </div>
+
+    <h2>Posición sticky</h2>
+    <div class="pos-sticky">
+        <a href="">Inicio</a>
+        <a href="">Contacto</a>
+
+    </div>
+    <p>Lorem ipsum, poner uno de 800 palabras para comprobar
+    </p>
+
+    <h2>Posicionamiento flotante: divs dentro de otros divs </h2>
+    <div class="pos-float-parent">
+        <!-- .pos-float-child-$*4 y sale:-->
+        <div class="pos-float-child-1">Caja 1 (float left)</div>
+        <div class="pos-float-child-2">
+            <div class="pos-float-child-2-1"></div>
+            <div class="pos-float-child-2-2"></div>
+
+        </div>
+        <div class="pos-float-child-3">Caja 3 normal</div>
+        <div class="pos-float-child-4">Caja 4 normal con clear</div>
+        <div class="pos-float-child-5">Caja 5 normal (float left)</div>
+        
+    </div> 
+
+    <div class="pos-float-child-6">Caja 6 normal</div>
+
+<!-- Esto no tiene ya nada que ver con los floats: -->
+    <!-- Overflow:Gestión del desbordamiento del contenido -->
+    <h2>Overflow: Gestión del desbordamiento del contenido</h2>
+    <!-- .overflow-parent-$*3>p>Lorem> -->
+    <h3>overflow: hidden</h3>
+    <div class="overflow-parent-1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio at sed maiores deserunt atque reiciendis quibusdam quidem voluptatibus pariatur corporis, vel quas perferendis itaque vitae, sapiente dicta ut maxime commodi.</p>
+    </div>
+    <h3>Overflow: visible</h3>
+    <div class="overflow-parent-2">
+        <p>Facere atque aliquam suscipit, maxime at eum maiores ea sequi porro cupiditate aspernatur libero? Laborum autem omnis in iste, necessitatibus aspernatur ipsum fuga nisi sit, nihil maiores impedit debitis! Illo.</p>
+    </div>
+    <h3>Overflow: </h3>
+    <div class="overflow-parent-3">
+        <p>Tenetur culpa, ipsa inventore aliquam autem corporis ducimus eius sunt expedita atque alias dolore deleniti quasi delectus explicabo ab illo nihil iure fuga maiores doloremque. Rem impedit recusandae asperiores suscipit.</p>
+    </div>
+
+    <h2>Tamaño de cajas (box-sizing)</h2>
+    <!-- .box-sizing-parent>box-sizing-child$*2> -->
+    <div class="box-sizing-parent">
+        <div class="box-sizing-child"></div>
+        <div class="box-sizing-child border-box"></div>
+    </div>
+
+
+
+
+
+   
+    <!--esto me esta dando espacio blanco hasta el título de abajo-->
+    <div style="height: 150px"></div>
 
 </body>
+
 </html>

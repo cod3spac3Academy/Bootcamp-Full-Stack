@@ -1,5 +1,11 @@
+body {
+    margin: 0;
+} /*aquí me refiero a la etiqueta body, no 
+a una clase y es para quitarle el margen a
+todo el documento*/
+
 /* Tipos de Display: none, inline,block, inline-block */
-[class=box]{
+[class^=box]{
     background-color: blue;
 
 }
@@ -43,11 +49,193 @@ eso se ven más pequeños */
      
 }
 
-/* Centrar horizontalmente (eje X) */
-
-.x-centered {
-    background-color: chartreuse;
+/*Este rectangulo lo he creado para referirme a él en las
+clases que voy creando en html y así no tengo que copiar 
+todo el rato el background y las alturas*/
+.rectangle {
+    background-color: teal;
     height: 50px;
-    width: 25%; /*este % se adapta al 25% del body*/
+    width: 25%;
+}
+
+/* Centrar horizontalmente (eje X) */
+.x-centered {
+    /* background-color: chartreuse;
+    height: 50px;
+    width: 25%; este % se adapta al 25% del body */
     margin: auto;
 }   
+
+/* Posición relativa */
+.pos-relative {
+    position: relative;
+    left: 150px;
+    top: -50px;
+    z-index: -1;/* me pone el recuadro en 
+    este caso, por detrás del título*/
+}
+
+/*Posición absoluta*/
+.pos-absolute-parent {
+    height: 300px;
+    border: 15px solid tomato;
+    position: relative;
+}
+.pos-absolute-child {
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+    
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-bottom: -25px;
+    /*aqui en los margin tengo que elegir 
+    bottom y left porque arriba en simple es lo que he elegido, 
+    pq es cuadrado, me coge las esquinas*/
+}
+
+.pos-fixed {
+    background-color: #333;
+    padding: 20px 30px;
+
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2; /*si no pongo esto cuando pasamos
+    por encima de recuadro de sticky de más abajo
+    mi boton fijo pasa por detrás*/
+}
+.pos-fixed a {
+    color: white;
+    text-decoration: none;
+}
+
+/*Posición sticky*/
+.pos-sticky {
+    background-color: steelblue;
+    padding: 15px 25px;
+
+    position: sticky;
+    top: 0;
+}
+.pos-sticky a{
+    text-decoration: none;
+    color: white;
+}
+/*Posicionamiento flotante: divs dentro de otros
+divs:*/
+.pos-float-parent {
+    border: 5px solid royalblue;
+    color: white;
+    font-size: 30px;
+
+    /*Para gestionar desbordamiento de contenido a para
+    que el padre no colapse si todos los hijos son flotantes
+    (ya que no tendrán tamaño virtual al estar flotando)
+    ,podemos utiliar overflow hidden y obligamos al padre a 
+    abarcar a los hijos. */
+    overflow: hidden;
+}
+
+.pos-float-child-1 {
+    background-color: brown;
+    height: 100px;
+    width: 33.3%;
+
+    float: left;
+}
+.pos-float-child-2 {
+    background-color: darkblue;
+    height: 100px;
+    width: 33.3%;
+
+    float: right;
+   
+}
+.pos-float-child-3 {
+    background-color: rgb(240, 15, 53);
+    height: 50px;
+    width: 100%;
+
+   
+}
+.pos-float-child-4 {
+    background-color: rgb(90, 139, 0);
+    height: 50px;
+    width: 100%;
+
+    clear: both;
+    /* con el clear both me limpia los floats anteriores
+    para que el padre respete a los hijos, 
+    sin esto, la caja 4 no se me ve */
+      
+}
+.pos-float-child-5 {
+    background-color: rgb(15, 232, 240);
+    height: 50px;
+    width: 33%;
+
+    float: right;
+    
+       
+}
+.pos-float-child-6 {
+    background-color: rgb(8, 6, 7);
+    height: 50px;
+    width: 100%;
+    
+    clear: both;       
+}
+.pos-float-child-2-1 {
+    background-color: #ddd;
+    height: 50px;
+    width: 20%;
+    float: right;
+
+}
+.pos-float-child-2-2 {
+    background-color: red;
+    height: 25px;
+    width: 20%;
+    float: right;
+
+}
+/*Esto ya no tiene nada que ver con los floats:*/
+/* Overflow: Gestión del desbordamiento del contenido */
+[class^=overflow-parent]{
+    width: 200px;
+    height: 100px;
+    border: 3px dashed black;
+}/*esto de arriba es para que todo lo que empiece 
+por la clase "overfloe-parent" me aplique 
+las características que he puesto
+ahí*/
+
+.overflow-parent-1 {  
+    overflow: hidden;
+}
+.overflow-parent-2{
+    overflow: visible;
+}
+.overflow-parent-3{
+    overflow: scroll;
+}
+
+/* Tamaño de cajas (box-sizind): */
+.box-sizing-parent {
+    width: 200px;
+    height: 200px;
+    border: 10px solid goldenrod;
+}
+.box-sizing-child {
+    width: 100%;
+    height: 50px;
+    background-color: green;
+    border: 10px solid rgb(147, 12, 151);
+}
+.border-box {
+    margin-top: 10px;
+    box-sizing: border-box;
+}
