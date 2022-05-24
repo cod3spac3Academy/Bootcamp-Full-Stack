@@ -1,0 +1,77 @@
+
+
+.pos-float-parent {
+    background-color: grey;
+    height: 50px;
+    width: 75%;
+    margin-left: 75px;
+
+    overflow: visible;
+    
+}
+
+[class^=pos-float-child]{
+    background-color: grey;
+    height: 35px;
+    width: 22%;
+    border: 5px solid grey;
+    text-align: center;
+    padding-top: 5px
+
+}
+
+.pos-float-child-1 {
+    /* text-align: left; */
+   
+     float: left;
+     
+
+}
+.pos-float-child-2 {
+    
+
+    float: right;
+}
+.pos-float-child-3 {
+    /* text-align: left; */
+   
+     float: left;
+     
+
+}
+.pos-float-child-4 {
+    
+
+    float: right;
+   
+}
+
+/* El profesor: */
+/* Estilos básicos: */
+nav {
+    border: 2px solid #ddd;
+    background-color: rgb(245,245,245);
+    padding: 12px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Solución 1 con posicionamiento absoluto: */
+nav {
+    position: relative;
+    min-width: 30px; /*es para que la ventana el usuario no la pueda cerrar más de esta medida*/
+}
+
+
+nav a:last-child {
+    position: absolute;
+    right: 12px;/*aquí le digo que se separe de la derecha a 12px*/  
+
+}
+
+/*en el nav a: last-child{}podría haber puesto solamente:
+float:right */

@@ -1,0 +1,77 @@
+/*hacemos una caracteristica para los contenedores que tengan todos igual*/
+/*General*/
+* {
+    box-sizing: border-box;
+}
+.container {
+    border: 2px solid grey;
+    padding: 10px;
+}
+ /*Header*/
+ header{
+     margin-bottom: 20px;
+ }
+.top.banner { /*es el padre*/
+    position: relative;
+}
+.top-banner form { /*esto quiere decir que me tome el form que hay en top-banner, es el hijo*/
+    position: absolute;
+    right: 20px;
+    top: 15%;
+    margin-top: 17px;
+
+}
+.top-banner input {
+    height: 34px; /*para que no dependa del navegador*/
+}
+/*Aside: cuadro izquierda*/
+.news > a, .news span { /*los enlaces que tengo en news y los span que tengo en news*/
+    display: block;
+    padding: 2px;
+}
+
+aside {  /*así le pongo el tamaño en el otro lado*/
+   float: left; /*me faltaba esta línea para que me salieran las cajas en su sitio, 
+                si no, me salían detrás del footer*/
+    width: 25%;
+}
+/*Contenido del cuadro CENTRAL*/
+section  {
+    
+    float: right;
+    width: 73%;
+    
+}
+.body1 {
+    
+    float: left;
+    width: 75%;
+}
+img{
+    float: left;
+    padding: 10px;
+}
+.body2 {
+    float: right;
+    width: 24%;
+    padding: 2px;
+    
+}
+.clear {
+    clear: both;
+}
+
+
+
+/*Footer*/
+.foot1 {
+   margin-top: 1400px;
+   
+}
+
+
+footer span {
+    float: right;
+    margin-top: -20px;
+    
+}

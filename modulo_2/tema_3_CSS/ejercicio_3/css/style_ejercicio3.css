@@ -1,0 +1,25 @@
+ul {
+    padding: 0px;
+    margin-right: 50px;
+}
+ul>li {
+    color: #333;
+    background-color: #ddd;
+    padding: 4px;
+    list-style-position: inside; /*esto es para que los puntitos entren en el recuadro de color*/
+    
+    list-style-image: url(../images/fast-forward-button.png);
+
+    
+    cursor: pointer; /*cambiar el puntero del ratón*/
+    border:1px solid grey;
+
+}
+
+/*para que me cambie el texto cuadno el cursor
+pasa por encima:*/
+ul>li:hover {
+    color: blue;
+    background-color: white;
+    list-style-image: url(../images/fast-forward-green.png);
+}
