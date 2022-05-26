@@ -1,0 +1,126 @@
+    /*EL RECUADRO de Mi web:*/ /*el profesor no usa esto así*/
+/* .header {
+    background-color: orangered;
+    border: 2px solid orange;
+    padding: 10px;
+    color: white;
+    text-align: left;   
+    
+} */
+.container-title {
+    padding: 1px 10%;
+    background-color: orangered;
+    /* border: 2px solid orange; */
+   
+    color: white;
+    text-align: left; 
+}
+    /*EL RECUADRO DE NAVEGACIÓN CON ENLACES:*/
+nav {
+    background-color: black;
+    /* border: 2px solid orange; */
+    padding: 0px;
+    color: white;
+    text-align: left;
+    height: 50px;   
+
+}
+.navbar a { /*revisar bien esto, es para poner la letra blanca que yo antes no podía*/
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    
+}
+.links {
+    padding: 1px 10%;
+    /* margin-top: 10px; */
+}
+    /*CUADRO CENTRAL de imagen y dos articulos abajo:*/
+.img { /*esto es para situar la imagen:*/
+    
+    background-image: url(../images/header.jpeg);
+    text-align: center;
+    background-position: center right;
+    background-size: cover; /*esto es para que la imagen se adapte sola*/
+}
+.img p { /*para el texto que va encima de la imagen:*/
+    font-size: 3em;
+    line-height: 3em;
+    margin: 0px;
+}
+.body2 { /*es el padre de welcome y texto*/
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    padding: 50px;
+    
+
+}
+.welcome {
+    /* background-color: grey; */
+    float: left;
+    width: 60%;
+    height: 70%;
+    
+   
+}
+
+.texto {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    float: right;
+    /* position: absolute; */
+    width: 15%;
+    height: 85%;
+    margin-right: 200px;  
+}
+
+/*EL FOOTER con el Copyright:*/
+footer {
+    background-color: black;
+    color: white;    
+    height: 60px;
+    text-align: right;
+    margin-top: 0px;
+}
+footer span {
+    float: right;   
+    margin-top: 15px;
+    margin-right: 750px;
+    /* margin-left: auto;
+    margin-right: auto; esto no me parece cambiar nada y lo quito*/
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (max-width: 768px){
+    .welcome, .texto {
+        float:none;
+        width: 100%;
+    }
+    .img p { /*para el texto que va encima de la imagen:*/
+        font-size: 2.5em;
+        line-height: 2.2em;
+        margin: 0px 5px;
+    }
+    .welcome{
+        margin-bottom: 30px;
+    }
+    .container1 img{
+        font-size: 3em;
+        line-height: 1.6em;
+        margin: 30px;
+    }
+    p#.welcome {
+        display: none;
+    }
+    p#.texto {
+        display: block;
+    }
+
+
+    
+}
+
+

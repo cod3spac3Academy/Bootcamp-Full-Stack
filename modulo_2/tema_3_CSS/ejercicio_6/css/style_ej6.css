@@ -1,0 +1,39 @@
+*{ /*esto está bien ponerlo siempre para darle ya diseño a los bordes*/
+    box-sizing: border-box
+}
+
+body { /*para darle estilo a las letras*/
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+a:last-child { /*last-child no es clase que ponga yo, viene por defecto, la uso para decirle que el "informaciń desktop no me aparezca*/
+    display: none;
+}
+a:hover { /*es una pseudo clase para que al pasar el puntero el objeto cambie de color y se ponga el que pongo aquí:*/
+    background-color: rgb(19,19,71);
+}
+@media only screen and (min-width:758px) { /*móvil*/
+    a{
+        float: left;
+        width: 25%; /*porque son 4 enlaces entonces tienen que como mucho sumar 100% del tamaño a ocupar*/
+        /*lo veo si agrando y achico la ventana del explorador*/
+    }
+}
+
+@media only screen and (min-width:1000px) { /*tableta, ponemos 1000px en vez de 900 para que no me aparezcan en un tamaño de paso, el botón de desktop más alto que el resto*/
+    a{
+       width: 20%; 
+    }
+    a:last-child{
+        display:block
+    }
+}
