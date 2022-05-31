@@ -223,7 +223,7 @@ ahí*/
     overflow: scroll;
 }
 
-/* Tamaño de cajas (box-sizind): */
+/* Tamaño de cajas (box-sizing): */
 .box-sizing-parent {
     width: 200px;
     height: 200px;
@@ -268,3 +268,90 @@ como ésta */
         width: 100%;
     }
 }
+
+/* Flex-box */
+.flex-parent {
+    display: flex; /*siempre que esté este display sabemos que es el CONTENEDOR, pero afecta tanto a los padres como a los hijos*/
+    /* flex-direction: row; /*row en default, es columna*/
+    /* align-items: center; para que me alinee el texto */
+    /* flex-wrap: wrap; NOWRAP (DEFAULT)REPASAR BIEN */ 
+    /* flex-flow: row wrap; */
+
+    /*ESTO ES PARA EL EJE PRINCIPAL:*/
+    justify-content: center;
+    justify-content: flex-start;
+    justify-content: flex-end;
+
+    justify-content: space-around;
+    justify-content: space-between;/*esto hace que si tengo dos elementos, me hace el max espacio disponible entre los dos objetos*/
+    justify-content: space-evenly;
+
+    /*ESTO ES PARA EL EJE SECUNDARIO:*/
+    align-items: center;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: stretch;
+    align-items: baseline;
+
+    border:2px solid black;
+    height: 250px;
+
+
+
+}
+[class^="flex-child"] {
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-parent > div:nth-child(odd) {
+    background-color: #ddd;
+    color: #333;
+}
+.flex-parent > div:nth-child(even) {
+    background-color: #333;
+    color: #ddd;
+}
+/*gracias a poner ODD y EVEN se me alternan los coolores de las cajas y si añadiera dos más, se alternarían solas*/
+
+.flex-child-1{ /*con esto vemos que el hijo1 tiene diferente altura que sus hermanos*/
+    /* height: 200px; */
+    flex-shrink: 2;
+}
+.flex-child-2{
+    flex-shrink: 3;
+    flex-grow: 1;
+}
+.flex-child-3{
+    flex-shrink: 1;
+    flex-basis: auto ;
+}
+
+/*CSS GRID básico con media queries*/
+[class^="grid-child"]{
+    background-color: red;
+}
+.grid-parent{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;/*la columna del medio será el doble que la 1 y 3 (la 2fr)*/
+    grid-template-rows: 1fr 2fr; /*como solo hay dos filas que han salido automaticas porque 6 cajas no le caben en 3 filas y él solo ha formado dos filas, pues aqui les doy tamaño*/
+    /*si hubiera copiado 4 veces esas 6 filas y quiero darle el mismo tamaño por bloques de 6, hago: "grid-template-rows: repeat(4, 1fr 2fr)" y tambien se les puedes dar tamaño en px pero se usa menos*/
+    gap: 10px;
+}
+
+/*vamos a hacer que a partir de un punto sea responsive*/
+@media only screen and (max-width:920px){
+    .grid-parent{
+        grid-template-columns: 1fr 2fr;
+    }
+}
+@media only screen and (max-width:768px){
+    .grid-parent{
+        grid-template-columns: 1fr;
+    }
+}
+
+/*CSS GRID por líneas*/

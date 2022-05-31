@@ -1,0 +1,62 @@
+body{
+    background-color: blueviolet;
+    align-items: center;
+    
+}
+.body-card{
+    background-color: cornsilk;
+    border-radius: 10px;
+    width: 450px;
+    height:650px;
+    margin: auto;
+    padding-bottom: 0px;
+
+
+}
+.container0{
+    text-align: center;
+    padding: 5px;
+    color: grey;
+    text-anchor: middle;
+}
+
+
+[class^=flex-parent]{
+    /* border: 2px solid grey; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 5px; /*es para el espacio que habrá entre los hijos*/
+    align-items: center;
+
+}
+
+[class^=flex-child]{
+    background-color: grey;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.flex-parent-2{
+    flex-grow:10;
+    justify-content: end;
+    margin-top: 125px;
+   
+}
+
+.style-circle{
+    background-color: bisque;
+    border-radius: 100px ;
+    width: 100px;
+   
+}
+.flex-child-5{
+    width: 150px;
+}
