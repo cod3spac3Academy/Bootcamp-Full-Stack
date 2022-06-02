@@ -1,0 +1,79 @@
+.menu-icon {
+    color: brown;
+}
+.color-icon{
+    color: blueviolet;
+}
+/*Degradados o gradientes de color*/
+[class^=gradient]{
+    height: 500px;
+    /* background-color: aqua; */
+    margin-bottom: 10px;  
+}
+.gradient-1 {
+    background: linear-gradient(to right, blueviolet, white);
+}
+.gradient-2 {
+    background: linear-gradient(to right, white, darkblue);
+}
+.gradient-3 {
+    background: linear-gradient(to bottom, rgb(14, 12, 17), rgb(231, 231, 238)),url(../paisaje.jpeg);/*esto es para que haga el degradado con la imagen por debajo pero no me sale bien*/
+    background-size: cover;
+}
+.gradient-4 {
+    background: radial-gradient(lightcoral 5%, yellow 25%, #1E90FF 50%);/*tambien se puede no poner el  %*/
+    width: 50%;
+    box-shadow: -50px 25px 20px black;
+}
+/*TRANSFORMACIONES*/
+.transform {
+    height: 100px;
+    width: 100px;
+    background-color: #333;
+
+    transform: translate(300px, -20px) rotate(45deg) scale(2) skew(25deg);
+}
+    /*TRANSICIONES*/
+.transitions {
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    background-color: rgb(5, 61, 8);
+    color: white; /*color del texto*/
+    cursor: pointer; /*para que me cambie color al pasar el ratón*/
+
+    display: flex; /*para centrar el texto*/
+    justify-content: center;
+    align-items: center;
+
+    /* transition-property: transform; /*para que lo que se mueva sea la propiedad transform */
+    /*transition-duration: 0.5s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in-out; */
+
+    /*otro ejemplo:*/
+    transition: all 0.5s ease-in; /*para eso, comento las anteriores*/
+
+}
+.transitions:hover {
+    transform: scale(1.3) rotate(3deg);
+}
+/*ANIMACIONES*/
+.text-animation {
+    animation-name: slidein;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes slidein {
+   from {
+       margin-left: 100%; /*aquí empieza la animación*/
+   } 
+   /*podemos poner reglas aquí en medio, de hecho, entiende que el color se aplica en el from, no en el to.*/
+   50%{ /*este es el estado intermedio*/
+       /* color: red; */
+       margin-left: 0;;
+   }
+   to {
+       margin-left: 100%; /*esto es donde acaba la animación*/
+   }
+}

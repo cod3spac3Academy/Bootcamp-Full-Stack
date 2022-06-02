@@ -1,0 +1,47 @@
+.wrapper {
+    display: grid;
+    /* background-color: coral; */
+    width: 390px;
+    padding: 10px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    gap: 10px;
+    color: aliceblue;
+    /* box-sizing: border-box; */
+
+    grid-template-columns: repeat(4,90px); /*esto es como poner: 90px 90px 90px 90px*/
+    grid-template-rows: repeat(4,90px);
+}
+[class^=square]{
+    background-color: rgb(105, 60, 228);
+    /* border: 1px solid grey; */
+    padding: 10px;
+    animation-name: anime;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transition: transform 0.3s ease-in-out; /*esto es la clave*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+
+ 
+
+}
+[class^=square]:hover {
+    
+    transform: scale(1.5);
+
+
+}
+
+@keyframes anime {
+    from{
+        margin-right: 100%;
+    }
+    to{
+        margin-right: 0%;
+    }
+}
