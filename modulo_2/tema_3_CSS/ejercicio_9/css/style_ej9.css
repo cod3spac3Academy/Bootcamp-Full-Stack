@@ -1,10 +1,10 @@
 .wrapper {
     display: grid;
-    /* background-color: coral; */
+    background-color: coral;
     width: 390px;
     padding: 10px;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px;
+    /*grid-template-columns: 100px 100px 100px 100px; /*es lo mismo repeat(4, 100px)*/
+    /* grid-template-rows: 100px 100px 100px 100px; */
     gap: 10px;
     color: aliceblue;
     /* box-sizing: border-box; */
@@ -15,10 +15,15 @@
 [class^=square]{
     background-color: rgb(105, 60, 228);
     /* border: 1px solid grey; */
-    padding: 10px;
-    animation-name: anime;
+    /* padding: 10px; */
+    animation-name: appear;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+    /* animation-iteration-count: infinite; */
+    
+    /*animation: appear 2s ease 0.5s 1 normal forwards;   /*esto es todo lo de arriba en resumido*/
+
     transition: transform 0.3s ease-in-out; /*esto es la clave*/
 
     display: flex;
@@ -36,8 +41,24 @@
 
 
 }
+/*Ahora ponemos uno a uno, la propiedad que es diferente de cada uno para que vayan apareciendo los recuadros de uno a uno*/
+.square-2 {animation-delay: 1s;} /*empiezo en el dos porque el square-1 no necesita delay*/
+.square-3 {animation-delay: 1.5s;}
+.square-4 {animation-delay: 2s;}
+.square-5 {animation-delay: 2.5s;}
+.square-6 {animation-delay: 3s;}
+.square-7 {animation-delay: 3.5s;}
+.square-8 {animation-delay: 4s;}
+.square-9 {animation-delay: 4.5s;}
+.square-10 {animation-delay: 5s;}
+.square-11 {animation-delay: 5.5s;}
+.square-12 {animation-delay: 6s;}
+.square-13 {animation-delay: 6.5s;}
+.square-14 {animation-delay: 7s;}
+.square-15 {animation-delay: 7.5s;}
+.square-16 {animation-delay: 8s;}
 
-@keyframes anime {
+@keyframes appear {
     from{
         margin-right: 100%;
     }
