@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*UN EJEMPLO: un selector para todos los divs*/
+div {
+  background-color: red;
+}
+div a {
+  color: white;
+}
+
+/*meter un selector dentro de otro en Css nos daría error*/
+
+/*# sourceMappingURL=style.css.map */
