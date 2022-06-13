@@ -4,6 +4,15 @@ div {
     a {
         color: white;
     }
+    button {
+        height: 100%;
+    }
 }
 /*meter un selector dentro de otro en Css nos daría error*/
+$columns: 2;
 
+@for $i from 1 through $columns {
+    .columns-#{$i} {
+        width: (100% / $i);
+    }
+}

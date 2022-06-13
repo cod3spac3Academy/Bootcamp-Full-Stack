@@ -1,0 +1,12 @@
+/*Impoort only necessary files (añado las rutas)*/ 
+@import "../bootstrap-4.6.1/scss/functions";
+@import "../bootstrap-4.6.1/scss/variables";
+
+/*Begin customization*/
+$theme-colors : (
+    "primary": violet,
+);
+
+/*End customization*/
+
+@import "../bootstrap-4.6.1/scss/bootstrap.scss"

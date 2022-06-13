@@ -1,0 +1,79 @@
+.title1{
+    
+    text-align: center;
+}
+
+container-1{
+    display: flex;
+    gap: 10px;
+    background-color: aqua;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+[class^=card]{
+    display: flex;
+    align-self: center;
+    margin: 5px;
+}
+/* .container {
+    @include media-breakpoint-only(lg) {
+      column-count: 3;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 2;
+    }
+    @include media-breakpoint-only(sm) {
+        column-count: 1;
+    }
+} */
+  
+
+.ranking-title{
+    text-align: left;
+}
+
+
+
+.formulario{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+}
+.cat {
+    
+
+    
+}
+
+.container-contact{
+    display: block;
+    max-height: 100%;
+    
+    
+}
+
+footer{
+    display: flex;
+    background-color: grey;
+    color: white;
+    
+    text-align: center;
+    justify-content: center;
+}
+
+span{
+    justify-content: center;
+}
+
+/* footer{
+    display: block;
+    background-color: grey;
+    color: beige;
+    text-align: center;
+    height: 100px;
+} */

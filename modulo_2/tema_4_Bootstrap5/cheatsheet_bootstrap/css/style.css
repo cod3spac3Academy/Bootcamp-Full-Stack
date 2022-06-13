@@ -6,7 +6,15 @@ div {
 div a {
   color: white;
 }
+div button {
+  height: 100%;
+}
 
 /*meter un selector dentro de otro en Css nos daría error*/
+.columns-1 {
+  width: 100%;
+}
 
-/*# sourceMappingURL=style.css.map */
+.columns-2 {
+  width: 50%;
+}
