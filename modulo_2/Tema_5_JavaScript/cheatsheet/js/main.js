@@ -5,7 +5,7 @@ function saludo () {
     alert ("Hola desde un script externo");
     console.log("has hecho click");
 }
-document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
+// document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
 
 //--------------------Depuración / logging (crear logs, es diferente de "login")----------------------------------------
 // alert("Mensaje");
@@ -115,7 +115,7 @@ console.log(number, typeof number);
 
 console.log("1" + 1, "1" - 1); //¡IMP!-----esto es característico de JS, la parte izquierda concatena los Strings, ya que + tiene la función a parte de suma, de concatenar y la parte derecha me hace  una cuenta porque - no tiene otra función en JS con lo que hace la matemática.
 
-//--------------------OBJECTS--------------------------------------------------------------
+//------------------OBJECTS--------------------------------------------------------------
 let person = {
     name: "John",
     age: 30,
@@ -161,3 +161,97 @@ person.jump();
     console.log([]);   //esto es un ARRAY
     console.log("");  //esto es un STRING 
     console.log(typeof{}, typeof [], typeof""); //me muestra lo que son cada uno de los de arriba
+
+//This
+//creamos person2:
+const person2 = {
+    name: "Thomas",
+    talk() {
+        console.log(this.name); //este this es como poner person2, porque estoy dentro del objeto y hago referencia a él.
+        console.log(`Me llamo ${this.name}`);
+        }
+}
+
+person2.talk();
+// person2.walk();
+
+console.clear();
+
+//--------------ARRAYS---------------------------------
+let selectedColors = ["red", "blue"]; //Array de Strings
+console.log(selectedColors, selectedColors.length, typeof selectedColors);
+
+selectedColors[2] = "green"; //Si no existe, lo crea
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.push("violet", "white"); //push es añadir un elemento al final del Array
+console.log(selectedColors, selectedColors.length);
+
+let removedItem = selectedColors.pop(); //borra el últ.elem. del array te lo devuelve 
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.unshift("white"); //agrega al inicio del array
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.shift(); //elimina el primer ele.del array y lo devuelve
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.sort(); //ordena alfabéticamente el array
+
+console.log("El rojo está en el índice ", selectedColors.indexOf("red"));
+
+console.log(selectedColors.slice(1 , 3));
+console.log(selectedColors);
+
+console.log("Los elementos borrados son: ", selectedColors.splice(1 , 3));
+console.log("El array se ha quedado así: ", selectedColors);
+
+console.clear();
+
+//Crear un objeto 'niño' que tenga las propiedades: nombre, altura, género y amigoS. AmigoS estará inicialmente vacío y añadiremos posteriormente 3 elementos con los nombres. Después, añadiremos uno extra al inicio.
+
+
+let nino = {
+    name: "Snooki", //recordar que aquí son comas no punto y coma
+    height:"1.72",
+    gender:"male",
+    amigoS: ["PEDRO"],//ESTO NO SE VERÁ POR COMO HE CREADO EL ARRAY DE NOMBRES ABAJO, PARA EVITARLO, USAR PUSH COMO SE VE EN EL EJEMPLO DE NINA.
+}
+
+
+nino.amigoS = ["Sara", "Juanje", "Coco"];//mientras amigos arriba esté vacío, bien. Si tuviera un nombre al poner esto s elo carga, para evitarlo, le pongo push
+nino.amigoS.unshift("Tim");//me lo pone en la posición 0
+console.log(nino, nino.length);
+
+
+let nina = {
+    name: "Mizar", //recordar que aquí son comas no punto y coma
+    height:"1.65",
+    gender:"female",
+    amigoS: ["Alex"],
+    perderAmigo() {
+        this.amigoS.pop()
+    }
+}
+nina.amigoS.push("Sara", "Juanje", "Coco");
+console.log(nina);
+
+nina.perderAmigo();
+console.log(nina);
+
+console.clear();
+//-------------CONDICIONALES---------------------------------
+const randomNumber = 9;
+const guessedNumber = "5";
+
+if (typeof randomNumber !== typeof guessedNumber) {
+    console.log("Hey, tiene que introducir el mismo tipo");
+}
+
+if (randomNumber===guessedNumber) {
+    console.log("Has acertado el número");
+} else if(randomNumber > guessedNumber) {
+    console.log("El número secreto es mayor");
+} else  if(randomNumber < guessedNumber) {
+    console.log("El número secreto es menor");
+}
