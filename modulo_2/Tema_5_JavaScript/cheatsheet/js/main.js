@@ -82,7 +82,7 @@ console.log(typeof array, typeof array2);
 console.log(typeof new Date("2021-05-12"));
 console.log(typeof new Error("Mensaje de error"));
 
-console.clear();
+// console.clear();
 //--------------------STRINGS--------------------------
 str = "Hola futuro";
 console.log(str, str.length);
@@ -125,7 +125,11 @@ let person = {
     }, //Pre-ES6
     jump(){
         console.log("Hey, estoy saltando.");
-    } //Es6
+    }, //Es6
+    presentarse() {
+        console.log(`Me llamo  ${this.name}, tengo ${this.age} y ${this.blonde ? "soy rubio" : "soy moreno"}`);
+    }
+    
 }
 
 //Acceso por punto / Dot notation
@@ -175,7 +179,7 @@ const person2 = {
 person2.talk();
 // person2.walk();
 
-console.clear();
+// console.clear();
 
 //--------------ARRAYS---------------------------------
 let selectedColors = ["red", "blue"]; //Array de Strings
@@ -206,7 +210,7 @@ console.log(selectedColors);
 console.log("Los elementos borrados son: ", selectedColors.splice(1 , 3));
 console.log("El array se ha quedado así: ", selectedColors);
 
-console.clear();
+// console.clear();
 
 //Crear un objeto 'niño' que tenga las propiedades: nombre, altura, género y amigoS. AmigoS estará inicialmente vacío y añadiremos posteriormente 3 elementos con los nombres. Después, añadiremos uno extra al inicio.
 
@@ -239,7 +243,7 @@ console.log(nina);
 nina.perderAmigo();
 console.log(nina);
 
-console.clear();
+// console.clear();
 //-------------CONDICIONALES---------------------------------
 const randomNumber = 9;
 const guessedNumber = "5";
@@ -255,3 +259,54 @@ if (randomNumber===guessedNumber) {
 } else  if(randomNumber < guessedNumber) {
     console.log("El número secreto es menor");
 }
+
+//Operador Terniario / Ternary Operator(un IF pero en una sola línea para dos opciones solamente)
+//meto esta funcion .person, más arriba en línea 119
+person.presentarse(); //esto es para llamar a la función
+
+let variable = 12 < 10 ? "el primero es menor" : "el primero es mayor"
+console.log(variable);
+
+//Switch
+let option = 3;
+switch(option){
+    case 1:
+        //Bloque de código para valor 1
+        console.log("Option vale 1");
+        break; //es un "si no"
+    case 2:
+        //bloque de código para valor 2
+        console.log("Option vale 2");
+        break;
+    case 3:
+        //bloque de código para valor 3
+        console.log("Option vale 3");
+        break;
+    default: //"De otro modo" del pseint
+        console.log("otra opción");
+        break;
+}   
+
+console.clear();
+//-------------FUNCIONES / FUNCTIONS---------------------------------
+//NOMBRADAS---------------
+function greet(name, lastName){
+    return`Hola, ${name} ${lastName}. ¿Qué tal?`;
+}
+
+console.log(greet("Marcos", "Aurelio"));
+// greet("Marcos", "Aurelio");
+
+//Que dvuelva el cuadrado de un número que recibe por parámetro
+function square(number){
+    return `El cuadrado es ${number*number}`;
+}
+
+// console.log(square(5));
+//ANÓNIMAS--------------------
+let numbersArray = [5, 51, 1,15, 2];
+console.log(numbersArray);
+numbersArray.sort(); //si no le digo nada me ordena los número s anivel ASCII (todos los que empiecen por 1, luego por 2 etc)
+console.log(numbersArray);
+
+numbersArray.sort();
