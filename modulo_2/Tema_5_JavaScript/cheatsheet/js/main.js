@@ -309,4 +309,121 @@ console.log(numbersArray);
 numbersArray.sort(); //si no le digo nada me ordena los número s anivel ASCII (todos los que empiecen por 1, luego por 2 etc)
 console.log(numbersArray);
 
-numbersArray.sort();
+//Hacemos función para determinar el orden de los elementos
+
+function orderNumbers (a, b) {  //función normal, con nombre
+    if (a < b) {
+        return -1;
+    } else if (a === b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+// numbersArray.sort(orderNumbers); 
+
+numbersArray.sort(function( a, b) {return a - b});//esto es una función ANÓNIMA, no la he denominado, como en el caso anterior y lo meto todo aquí directamente. No podré llamarla más adelante, muere aquí, está incrustada.
+
+console.log (numbersArray);
+
+//ARROW FUNCTIONS
+
+// const permiterOfSquare = (side) => side*4;
+//esto es igual que lo de abajo
+
+let permiterOfSquare = function (side) {
+    return side * 4
+}
+permiterOfSquare = function (side) {return side * 4;}//opcional, una única línea
+permiterOfSquare = (side) => {return side * 4;}//sustituyo Function por la flecha después de side
+permiterOfSquare = (side) => side * 4;//solo quiero devolver algo, quito las llaves y el return
+permiterOfSquare = side => side * 4; //si sólo tiene un parámetro puedo quitar paréntesis
+
+
+console.log(permiterOfSquare(5));
+
+// console.log(typeof function() {});
+// console.log(typeof (() => {}));
+
+//---------------LOOPS / BUCLES-------------------------------
+//FOR
+for (let i = 0; i <= 10; i++) {
+    console.log(`Índice: ${i}`);    
+}
+
+//Definir y rellenar un array con el índice i:
+const miArray = []; //creamos este array vacío
+
+for (let i = 0; i <= 10; i++) {
+    miArray.push(i);    
+}
+console.log(miArray);
+
+//WHILE
+let contador = 0;
+while (contador <= 10) {
+    console.log(contador);
+
+    contador++; //esto es como poner contador = contador +1
+}
+
+while (true) {
+    break;
+}
+console.log("No entra en bucle infinito");
+
+//FOR EACH (siempre se aplica a los arrays, exclusivamente)
+console.log(numbersArray);
+
+function myFunction (item, index) {
+    console.log(`Índice ${index} : ${item}`);
+}
+numbersArray.forEach(myFunction) //este es el array del ejemplo penúltimo
+
+myFunction(numbersArray[0], 0, numbersArray);
+myFunction(numbersArray[1], 1, numbersArray);
+myFunction(numbersArray[2], 2, numbersArray);
+myFunction(numbersArray[3], 3, numbersArray);
+myFunction(numbersArray[4], 4, numbersArray);
+    
+let otherArray = [];
+
+console.log(otherArray); //Cuidado con la consola del navegador
+
+numbersArray.forEach(item => otherArray.push(item));
+
+console.log(otherArray);
+
+//FOR ..OF 
+for (let item of numbersArray){
+    console.log(item);
+}
+
+// CONTINUE
+for (let i = 0; i < 5; i++){
+    if (i === 3){
+        continue; //salta a la siguiente iteración
+    }
+    console.log("Using continue", i);
+}
+
+//BREAK
+let i = 0;
+let k = 0;
+mainLoop: while (true) { //le ponemos nombre al bucle externo para luego referirnos a él
+    console.log("Outer loop", i);
+    i++;
+    k=1;
+    while (true) {
+        console.log("inner loop", k);
+        k++;
+        if (i===5 && k === 5){ //pongo las dos opciones aquí porque este bucle ocurre más
+            break mainLoop; //rompe o para el bucle en el que esté
+        } else if (k === 5) {
+            break;
+        }
+         
+    }
+}
+

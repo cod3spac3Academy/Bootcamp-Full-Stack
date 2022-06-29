@@ -10,15 +10,50 @@
             font-size: 3em;
             display: block;
         }
+        .grandparent{
+            height:500px;
+            background-color: brown;
+        }
+        .grandparent, .grandparent div {
+            border: 5px solid black;
+            box-sizing: border-box;
+            display: flex;
+            flex-grow: 1;
+            gap: 25px;
+            padding: 25px;
+        }
+        .parent {
+            background-color: darkcyan;
+        }
+        .child {
+            background-color: khaki;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Procesar Javascript</h1>
+    <h1>Procesar Javascript: </h1>
     <h3>3 formas para procesar JavaScript (hacer que se ejecute):</h3>
     <a href="#" onclick="console.log('Hola desde un script inline')">Inline script</a> <!--Inline script-->
     <a href="#">Internal script</a>
     <a href="#">External script</a>
+
+    <h1>Acceso al DOM: </h1>
+    <!-- shortcut --><!--(.grandparent#grandparent>parent#parent$*2>.child#child$*2)-->
+    <div class="grandparent" id="grandparent">
+        <div class="parent" id="parent1">
+            <div class="child" id="child1">Child 1</div>
+            <div class="child" id="child2">Child 2</div>
+        </div>
+        <div class="parent" id="parent2">
+            <div class="child" id="child3">Child 3</div>
+            <div class="child" id="child4">Child 4</div>
+        </div>
+    </div>
+
+
+
+    </div>
 
     <!-- Internal script -->
     <script>
@@ -32,6 +67,7 @@
 
     <!-- External script -->
     <script src="js/main.js"></script>
+    <script src="js/dom.js"></script>
     
 </body>
 </html>
