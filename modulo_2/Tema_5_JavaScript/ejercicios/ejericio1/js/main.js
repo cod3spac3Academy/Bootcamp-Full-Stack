@@ -22,7 +22,8 @@ button.addEventListener("click", function () {
     document.body.style.backgroundColor = "red";
 });
 
-//Apartado 3: Partimos de un HTML con una lista de 3 URLs (texto) de imágenes y un element img . Al hacer click en cada URL, cambiará la imagen a la que contenga dicha URL.
+//Apartado 3: Partimos de un HTML con una lista de 3 URLs (texto) de imágenes y un element img . Al hacer click 
+//en cada URL, cambiará la imagen a la que contenga dicha URL.
 const listItems = document.getElementsByTagName("li"); //listItems lo voy a tratar como un array luego
 const image = document.querySelector("img");
 
@@ -32,9 +33,33 @@ listItems[0].addEventListener("click", changeImage);
 listItems[1].addEventListener("click", changeImage);
 listItems[2].addEventListener("click", changeImage);
 
-//Apartado 4: Añadir un input de tipo texto y un botón. Al pulsar el botón debe escribirse el texto del input en un párrafo 4.2 Añadir un nuevo input pero esta vez cambiará el texto con cada pulsación de tecla del usuario.
+//v2 - Autoría:
+const list = document.querySelector("ul");
+//const image = document.querySelector("img");
+
+const changeImage = e => {image.src = e.target.textContent; console.log(e)};
+
+list.addEventListener("click", changeImage);
+
+//Apartado 4: Añadir un input de tipo texto y un botón. Al pulsar el botón debe escribirse el texto 
+//del input en un párrafo 4.2 Añadir un nuevo input pero esta vez cambiará el texto con cada pulsación de 
+//tecla del usuario.
 
 
+const ap4Input = document.querySelector("input");
+const ap4Button = document.querySelectorAll("button");//[1];
+const ap4Paragraph = document.getElementsByClassName("fillableParagraph");
+
+// ap4Button.addEventListener("click", () => {
+//     ap4Paragraph.textContent = ap4Input.value;
+//     ap4Input.value = "";
+// });
+
+function myFunctionAp4 (){
+    ap4Input.textContent = ap4Paragraph.value;
+    ap4Input.value = "";
+};
+ap4Button.addEventListener("click", (myFunctionAp4);
 
     
 
