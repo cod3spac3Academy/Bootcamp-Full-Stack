@@ -1,4 +1,5 @@
 console.log("probando");
+//EVENTOS DE RATÓN:
 //Mouseover: al pasar el ratón encima del botón, éste cambia de color:
 let pruebaRaton = document.getElementById("event1");
 
@@ -16,6 +17,8 @@ let pruebaRaton2 = document.getElementById("event2");
 pruebaRaton2.addEventListener("click", function(event){
     event.target.style.backgroundColor = "blue";
 },false);
+
+//EVENTOS DE TECLADO:
 
 
 
