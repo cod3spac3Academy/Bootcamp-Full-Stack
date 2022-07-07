@@ -1,18 +1,19 @@
 //para ver que todo está bien enlazado:
 console.log("<h5>hola</h5>", "<br>");
 document.write("<h5>hola</h5>", "<br>");
+console.log("probando");
 
 //Apartado 1: Partimos de un HTML con un div vacío. Con JS, añadir dos elementos p con un texto dentro.
 //Creo las constantes:
-// const contenedor = document.getElementById("mainContainer");
-// const paragraph1 = document.getElementById("p1");
-// const paragraph2 = document.getElementById("p2");
-// //Les meto texto dentro:
-// paragraph1.textContent = "Lorem ipsum";
-// paragraph2.textContent = "Párrafo de prueba 2";
-// //Ahora los inserto:
-// contenedor.appendChild(paragraph1);
-// contenedor.appendChild(paragraph2);
+const contenedor = document.getElementById("mainContainer");
+const paragraph1 = document.getElementById("p1");
+const paragraph2 = document.getElementById("p2");
+//Les meto texto dentro:
+paragraph1.textContent = "Lorem ipsum";
+paragraph2.textContent = "Párrafo de prueba 2";
+//Ahora los inserto:
+contenedor.appendChild(paragraph1);
+contenedor.appendChild(paragraph2);
 
 // document.write("sdfsdfgsdfgadfgdfg");
 
