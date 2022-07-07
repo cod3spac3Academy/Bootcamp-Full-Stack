@@ -58,6 +58,39 @@ mensaje.addEventListener("click", function (e) {
     };
 });
 
+//Apartado 6:
+const numeroComprobar = document.querySelector("#num1");//si no pongo la # aquí, no hace lo del rojo
+
+numeroComprobar.nextElementSibling.addEventListener("click", function(){
+    if(numeroComprobar.value % 2 !== 0){
+        numeroComprobar.style.border = "2px solid red";
+    }else{
+        numeroComprobar.style.border = "";
+    };
+});
+//Apartado 7:
+const ul = document.getElementById("ap7");
+for (let i = 1; i <= 10; i++) {
+    const newLi = document.createElement("li");//defino el nuevo elemento, la li(lista)
+    newLi.textContent =`Elemento ${i}`;//le digo que el contenido de cada elemento es esto
+    ul.appendChild(newLi);//le digo que a ul le meta dentro el nuevo elemento, newLi
+};
+
+//Apartado 8:
+const newPage = document.querySelector("#newPage");
+const link = document.querySelector("a");
+newPage.addEventListener("click", () => link.target="_blank");
+
+//Apartado 9:
+const textToChange = document.getElementById("paragraphCambiarColor");
+
+textToChange.addEventListener("change", (e) => {
+    textToChange.style.color = e.target.value;
+ 
+});
+
+
+
 
 
 
