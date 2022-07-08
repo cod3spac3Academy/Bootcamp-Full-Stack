@@ -82,13 +82,100 @@ const link = document.querySelector("a");
 newPage.addEventListener("click", () => link.target="_blank");
 
 //Apartado 9:
-const textToChange = document.getElementById("paragraphCambiarColor");
-
-textToChange.addEventListener("change", (e) => {
+const textToChange = document.querySelector("#paragraphCambiarColor");
+const selectColors = document.querySelector("#colorInput");
+selectColors.addEventListener("change", (e) => { //aquí había puesto del revés las const en el evento y no funcionaba.tengo que preguntarme dónde ocurre el evento
     textToChange.style.color = e.target.value;
- 
+    //en clase aquí ponen lo de más abajo, es ejemplo
 });
 
+/*en clase, debajo de la última línea de la función:
+let dict = {
+    //red :"Rojo";
+    //green: "Verde";
+};es menos habitual hacer esto, es acceder al obj por corchetes
+console.log(dict[e.target.value]);*/
+
+
+//Apartado 10:
+//creo las const:
+const numAleatorio = document.querySelector("#generateNumAl");
+const showNumAl = document.querySelector("#paragraphNumAleatorio");
+//creo el evento para que me genere numAleatorio al pinchar el botón:
+numAleatorio.addEventListener("click", () => {
+    numAleatorio.value = Math.floor(Math.random()*100);
+    showNumAl.textContent = numAleatorio.value;
+});
+//ahora creo el botón para que me muetre la lista de los nº antes generados
+// const listOfNumbersGenerated = document.querySelector("li");//está oculta en html
+// const buttonShow = document.querySelector("#numGenerados");//botón para que aparezca
+// //creo función que me vaya guardando los números generados:
+// let listNumbers = [];
+// function numerosGenerados (Number){
+//     for (let i = 0; i < 10; i++) {
+//         listOfNumbersGenerated.value = listNumbers[i];
+        
+//     };
+// };
+// //mostrar la lista ol:
+// function showList(num) {
+//     listOfNumbersGenerated.display.
+// }
+
+
+//quiero crear el evento de que me muestre la lista al pulsar este botón
+// buttonShow.addEventListener("click", (e) =>{ 
+//     listOfNumbersGenerated. = e.target.value;
+// })
+
+//creo lista donde se irán guardando esos números, generados. 
+//Debe ser un array, en el que se irán guardando los números:bucle
+//  let listNumbers = [];
+// for (let i = 0; i < 10; i++) {
+//     listNumbers.slice(i);//aquí le digo lo que quiero que haga, en este caso que me los ordene
+// };
+// console.log(listNumbers);
+
+
+
+//Función para mostrar la lista de esos arrays:
+
+//APARTADO 11:
+// const firstInput = document.getElementById("listaParaComprobar");
+// const secondInput = document.querySelector("#introNumbers");
+// const buttonComprobar = document.querySelector("#comprobar");
+// const p11 = document.getElementById("paragraph11");
+
+
+// buttonComprobar.addEventListener("click", () => {
+    
+//     if (firstInput.value == secondInput.value){//¿cómo es esto en vez de textContent para un número, así?
+//         p11.textContent = `El número ya existe en la lista.`;
+//     }else {
+//         p11.textContent = `El número introducido no estaba en la lista`;
+//     };
+
+// });
+
+// const limpiar = getElementById("limpiar");
+// limpiar.addEventListener("click", () => {
+//     document.getElementById("introNumbers").value="";//&& document.getElementById("paragraph11"); 
+
+// });
+
+//ÚLTIMA PARTE.REFACTORIZAR:
+
+const buttons = document.getElementsByClassName("btn");
+
+buttons[0].addEventListener("click", () => {
+    buttons[0].style.backgroundColor = "red";
+});
+buttons[1].addEventListener("click", () => {
+    buttons[1].style.backgroundColor = "red";
+});
+buttons[2].addEventListener("click", () => {
+    buttons[2].style.backgroundColor = "red";
+});
 
 
 
