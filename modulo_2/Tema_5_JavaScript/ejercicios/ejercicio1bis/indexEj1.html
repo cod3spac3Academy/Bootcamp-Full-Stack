@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EJERCICIO 1 BIS</title>
+    <style> 
+        .btn {
+            background-color: brown;
+        }
+        </style>
 </head>
 <body>
     <h3>EJERCICIO 1 BIS:</h3>
@@ -56,7 +61,7 @@
         <option value="blue">Azul</option>
     </select>
 
-    <h4>Apartado 10:</h4>
+    <h4>Apartado 10: (no me ha salido)</h4>
     <button id="generateNumAl">Generar número aleatorio</button>
     <p id="paragraphNumAleatorio"></p>
 
@@ -67,7 +72,16 @@
        <li>Números impares: </li>
    </ol>
 
-   <h4>Apartado 11:</h4>
+   <!-- en clase: -->
+   <h3>Apartado 10 - clase - </h3>
+   <p>Aleatorio:<span id="currentRandom"></p>
+   <p>Números totales:<span id="totalNumbers"></span> </p>
+   <p>Impares:<span id="oddNumbers"></span></p>
+   <p>Pares: <span id="evenNumbers"></span></p>
+
+   <button id="randomButton">Generate random number</button>
+
+   <h4>Apartado 11: (no me ha salido)</h4>
    <h5>Lista de números:</h5>
    <ul id="listaParaComprobar" type="number">
        <li>9</li>
@@ -81,12 +95,23 @@
    <button id="limpiar">Limpiar</button>
    <p id="paragraph11"></p>
 
+   <h3>Apartado 11 - en clase - </h3>
+   <h5>Lista de números:</h5>
+   <ul id="listaNumeros"></ul>
+   <input type="text" name="" id="inputLista" placeholder="Introduce tu número">
+   <button id="buttonLista">Añadir a la lista</button>
+   <!-- Lo demás lo hago desde JS -->
+
+   <!-- en clase: -->
+   <h4>Apartado 12:</h4>
+    <button id="toggler">Toggle class.btn</button>
+   <!-- aquí he aádido en HEAD, un style de css para este botón -->
+   
+   
    <h3>ÚLTIMA PARTE, REFACTORIZAR:</h3>
-   <button class="btn">Botón 1</button>
-   <button class="btn">Botón 2</button>
-   <button class="btn">Botón 3</button>
-   
-
+   <button class="btn2-red">Botón 1</button>
+   <button class="btn2-red">Botón 2</button>
+   <button class="btn2-red">Botón 3</button>
 
    
 
@@ -98,7 +123,7 @@
 
 
 
-    <br><br><br><br><br><br><br> <br><br>
+    
     
 
 
@@ -106,7 +131,7 @@
 
 
    
-
+   <div style="height: 150px;"></div>
     <script src="js/mainEj1.js"></script>
 </body>
 </html>

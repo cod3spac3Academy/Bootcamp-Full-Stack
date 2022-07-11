@@ -136,11 +136,77 @@ numAleatorio.addEventListener("click", () => {
 // };
 // console.log(listNumbers);
 
+//en clase:APARTADO 10:
+const currentRandom = document.getElementById("currentRandom");
+const totalNumbers = document.getElementById("totalNumbers");
+const oddNumbers = document.getElementById("oddNumbers");
+const evenNumbers = document.getElementById("evenNumbers");
+//Aquí genero los aleatorios:
+document.getElementById("randomButton").onclick = () => {
+   const randomNumber = Math.floor (Math.random()*100)//alternativa a Math.floor: parseInt(Math.random()*100);
+    /* document.getElementById("randomButton").addEventListener("click", () => {}); alternativa a la forma de escribir el evento con .on---*/
+   currentRandom.textContent = randomNumber;
 
+//     //esto me convierte el textcontent enun numero y le va sumando 1 al contador para saber cuántos números me ha generado, y la de abajo también
+   totalNumbers.textContent++;//es lo mismo a: 
+   //totalNumbers.textContent = Number (totalNumbers.textContent) + 1;
+
+   //esto es para ver los pares:
+    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++;
+
+};
 
 //Función para mostrar la lista de esos arrays:
 
-//APARTADO 11:
+//en clase: APARTADO 11:
+const listaNumeros = document.getElementById("listaNumeros");
+const inputLista = document.getElementById("inputLista");
+const buttonLista = document.getElementById("buttonLista");
+let numbersList = [1, 15, 20, 35, 70];
+
+function fillList () {
+    //Vacía la lista  y la rellena de nuevo elemento a elemento
+    listaNumeros.innerHTML = ""; //con esto me cargo lo que tenga dentro
+    for (let number of numbersList) {
+        newLi = document.createElement("li");
+        newLi.textContent = number;
+        listaNumeros.appendChild(newLi);
+      
+    };
+};
+/*con la función fillList puedo modificar el array como yo quiera*/
+
+function addToList (){
+    //Parsea el input, comprueba si existe y los añade:
+    let numberToJoin = Number (inputLista.value);
+    if (numbersList.indexOf(numberToJoin) === -1) {
+        numbersList.push (numberToJoin);
+        fillList();
+    }else {
+        window.alert ("Oooops, El número ya está en la lista");
+    };
+};
+fillList(); //esto es para llamar a la función y qu eme aparezcan en pantalla los número que vamos añadiendo
+buttonLista.addEventListener("click", addToList);
+
+/*OTRA SOLUCIÓN MÁS SENCILLA de otro compañero:*/
+/*const myArray = [];
+
+function addNumber() {
+    const num = inputLista.value;
+    if(myArray.includes (num)){
+        alert("error");
+    }else {
+        const li =document.createElement("li");
+        listaNumeros.prepend(li);
+        li.textContent = num;
+        myArray.push(num);
+    };
+};
+buttonLista.addEventListener("click", addNumber);*/
+
+
+//apartado 11(mi intento):
 // const firstInput = document.getElementById("listaParaComprobar");
 // const secondInput = document.querySelector("#introNumbers");
 // const buttonComprobar = document.querySelector("#comprobar");
@@ -163,23 +229,45 @@ numAleatorio.addEventListener("click", () => {
 
 // });
 
-//ÚLTIMA PARTE.REFACTORIZAR:
 
-const buttons = document.getElementsByClassName("btn");
 
-buttons[0].addEventListener("click", () => {
-    buttons[0].style.backgroundColor = "red";
+//apartado 12:
+document.querySelector("#toggler").onclick = (e) => e.target.classList.toggle("btn");
+
+//en clase: ÚLTIMA PARTE.REFACTORIZAR:
+
+/*let buttons = document.getElementsByClassName("btn2-red");//Devuelve el HTMLCollection
+//le ponemos let para que sea una variable y así poder usar buttons en la opción 2 más abajo*/
+
+//Esto lo comento porque es lo que tengo que refactorizar:
+// buttons[0].addEventListener("click", () => {
+//     buttons[0].style.backgroundColor = "red";
+// });
+// buttons[1].addEventListener("click", () => {
+//     buttons[1].style.backgroundColor = "red";
+// });
+// buttons[2].addEventListener("click", () => {
+//     buttons[2].style.backgroundColor = "red";
+// });
+
+//Solución 1:
+// Array.from(buttons).forEach(button => {button.onclick = e => e.target.style.backgroundColor = "red");
+
+    //la hago más desglosada:
+
+// Array.from(buttons).forEach(button => {
+//     button.addEventListener("click", function (e){
+//         e.target.style.backgroundColor = "red";
+//     });
+// });
+
+//Solución 2:
+const buttons = document.querySelectorAll(".btn2-red");//devuelve Nodelist que tiene disponible forEach
+buttons.forEach(button => {
+    button.addEventListener("click", function (e) {
+        e.target.style.backgroundColor = "red";
+    });
 });
-buttons[1].addEventListener("click", () => {
-    buttons[1].style.backgroundColor = "red";
-});
-buttons[2].addEventListener("click", () => {
-    buttons[2].style.backgroundColor = "red";
-});
-
-
-
-
 
 
 
