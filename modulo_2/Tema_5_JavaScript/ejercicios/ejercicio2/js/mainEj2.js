@@ -9,10 +9,10 @@ function User(name, firstLastName, secondLastName, email, age, city){
     this.city = city;
     this.productsCount = 0;
     this.incrementProducts = function (){
-        this.productCount++;
+        this.productsCount++;
     };
     this.emptyProducts = function (){
-        this.productCount = 0;
+        this.productsCount = 0;
 }};
 
 //Data:
@@ -55,17 +55,38 @@ users.forEach  (user => { //el item de la función original lo llamo ya user por
     console.log(`key: ${key}, value: ${users[0][key]}`);
 };*/
 //con [key] puedo acceder tanto al nombre de la propiedad como a su valor.
-
-for (const propertyName in users[0]){
-    const value = users[0][propertyName];
-
-    if(typeof value !== "function"){
-       const newListItem = document.createElement("li");
-       newListItem.textcontent = `${propertyName}, ${value}`;
-       newListItem.classList.add("list-group-item");//con esto le añado una clase de bootstrap para que se vea el diseño igual a bootstrap
-       list.appendChild(newListItem);
+function fillList(user){
+    
+    list.innerHTML ="";
+    
+    for (const propertyName in user){
+        const value = user[propertyName];
+    
+        if(typeof value !== "function"){
+           const newListItem = document.createElement("li");
+           newListItem.innerHTML = `<b>${propertyName}:</b> ${value}`;//el inner.HTML es el que hace que me aparezca la tabla completa
+           newListItem.classList.add("list-group-item");//con esto le añado una clase de bootstrap para que se vea el diseño igual a bootstrap
+           list.appendChild(newListItem);
+        
+             /*list.innerHTML+= `<li class="list-group-item"><b>${propertyName}:</b>${value}</li>`*///solo me han salido los recuadros con esto, no con todo lo anterior del if que he comentado
+        };
     };
-}
+
+
+
+};
+//8. Actualizamos el CARRITO:lo pongo aquí seguido para que los listeners estén todos juntos abajo.
+fillList(users[0]);
+function processProducts (e){
+    const selectedUser = users.find (user => user.name === select.value);//con esta linea solo cambio la linea de productos del que esté seleccionado
+    
+    if (e.target === incrementButton){
+        selectedUser.incrementProducts();
+    }else {
+        selectedUser.emptyProducts();
+    };
+    fillList(selectedUser);//con esto hago que se me muestre 
+};
 
 /*for (const key in object) {
     if (Object.hasOwnProperty.call(object, key)) {
@@ -77,13 +98,26 @@ for (const propertyName in users[0]){
 //6. Añadir listeners necesarios:
 //el select y los dos botones.
 select.addEventListener("change", e =>{
-    console.log(select.value);
+    const selectedUser = users.find(user=> user.name === select.value);
+    fillList(selectedUser);//esto me actualiza la ista entera
 });
+/*fillList(users[0]);*/ //como hemos metido todo en funciones, si no pongo esto, no se me ejecuta
+//el que me aparezca el recuadro, con lo que tengo que ejecutarlo yo así para que aparezca de
+//primeras un usuario
+
+
 /*Otra forma de poner esta función de arriba es:
 select.addEventListener("change", e => {
     console.log(users.find(user => user.name === select.value));
-});
+
 es para buscar elementos en un array (.find)*/
 
-incrementButton.addEventListener("")
+
+
+    //añado sus listeners:
+incrementButton.addEventListener("click", processProducts);
+emptyButton.addEventListener("click", processProducts);
+
+
+
 
