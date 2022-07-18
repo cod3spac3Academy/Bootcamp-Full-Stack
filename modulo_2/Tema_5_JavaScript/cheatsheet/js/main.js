@@ -82,6 +82,35 @@ console.log(typeof array, typeof array2);
 console.log(typeof new Date("2021-05-12"));
 console.log(typeof new Error("Mensaje de error"));
 
+//--------copiar objetos:------
+let obj1 = {property: 5};
+let obj2 = obj1; //no es una copia, no funciona con objetos
+
+obj2 = {...obj1};//COPIA SUPERFICIAL QUE USAREMOS PRACTICAMENTE SIEMPRE
+obj2 = JSON.parse(JSON.stringify(obj1)); //COPIA PROFUNDA O TOTAL
+
+//--------copiar arrays--------
+let arr = [1,2,3];
+let arr2 = [0, ...arr, 4];
+//devuelve: Array(5)[0,1,2,3,4]
+
+//si ahora le pongo: arr2 = [o, (3), [...arr], 4]; devuelve:
+/*Array(4) [ 0, 3, (3) […], 4 ]
+​
+0: 0
+​
+1: 3
+​
+2: Array(3) [ 1, 2, 3 ]
+​
+3: 4
+​
+length: 4
+​
+<prototype>: Array []*/
+
+//es meter un array dentro de otro.
+
 // console.clear();
 //--------------------STRINGS--------------------------
 str = "Hola futuro";
@@ -181,7 +210,7 @@ person2.talk();
 
 
 //OBJET CONSTRUCTOR (usinf functions):----------------
-/*ejemplos: Array, Number, String, Date , en mayúscula la primera*/
+/*ejemplos de otros constructores ya primitivos: Array, Number, String, Date , en mayúscula la primera*/
 
 function Car (brand, color, weight, topSpeed){
     this.brand = brand;
