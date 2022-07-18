@@ -89,10 +89,48 @@ employees = employees.map(employee => {
 
 console.log("Apartado 6:", employees);
 
+console.clear();
+
 //Apartado 7: caluclar el coste total para la empresa
 
 const totalCost = employees.reduce((salarioSuma, employee) => {
-    salarioSuma += employee.salario;
+    salarioSuma += employee.salario * 1.15, 0;
     return salarioSuma;
 }, 0);
+
+//esto es igual que hacer:
+//const totalCost = employees.reduce((salarioSuma, employee) => salarioSuma + employee.salario * 1.15, 0);
 console.log(totalCost);
+
+//Apartado 8:
+//Sacar a los empleados que tengan un rendimiento menor a 0.3:
+employees = employees.filter(employees => employees.rendimiento <= 0.3);
+console.log("8.1.Despedir a los que tengan un rendimiento menor a 0.3", employees);
+
+//Calcular sueldo medio de la empresa:
+let sueldoMedio = employees.reduce ((salarioSuma, employees) => salarioSuma + employees.salario, 0) / employees.length;
+
+sueldoMedio = sueldoMedio.toFixed(2);//esto es para redondear los decimales
+
+console.log("8.2.El sueldo medio de la empresa: ", sueldoMedio);
+
+//Subir el sueldo de lo que tengan rto superior a 0.7.
+//(éste se puede hacer como el punto)
+
+/*employees = employees.map (employees => {
+    if (employees.rendimiento > 0.7){
+        employees.salario = employees.salario * 1.25;
+        
+    }
+    return employees;
+});*/
+
+employees.forEach (employee => {
+    if (employee.rendimiento > 0.7){
+        employee.salario = employee.salario * 1.25;
+        console.log("Subir el sueldo del empleado", employee.position);
+    }
+    return employees;
+});
+
+//console.log("8.3.Subir el sueldo a los que tengan redimiento superior a 0.7", employees);
