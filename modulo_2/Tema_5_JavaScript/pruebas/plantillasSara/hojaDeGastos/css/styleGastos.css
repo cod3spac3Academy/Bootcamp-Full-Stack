@@ -1,0 +1,95 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 90%;
+
+}
+
+
+
+body {
+    background-color: aqua;
+    position: absolute;
+}
+
+.containerPpal {
+    border: 15px solid salmon;
+    /* box-sizing: border-box; */
+    background-color: beige;
+    height: 1920px;
+    width: 95%;
+   
+    position: relative;
+    display: block;
+    overflow: auto;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.third-container {
+    background-color: blueviolet;
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    text-align: justify;
+    flex-direction: column;
+    height: 80%;
+    width: 60%;
+    top: 0;
+    bottom: 0;
+    padding-top: 100px
+}
+[class^=data]{
+    /* position:relative; */
+    border: 10px solid blue;
+    background-color: cornflowerblue;
+    align-self: center;
+    text-align: center;
+    justify-content: space-around;
+    height: 80%;
+    width: 60%;
+    
+}
+[class^=forth-container]{
+    /* position: relative; */
+    background-color: brown;    
+    flex-direction: column;
+    justify-content: ;
+    /* align-self: center; */
+    /* padding-left: 30px; */
+    height: 80%;
+    width: 60%;
+    margin-left: 120px;
+    
+    
+
+}
+
+.data-incomes {
+    margin-top: 20px;
+    
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    width: 60%;
+}
+
+input {
+    width:60%
+    border: 2px;
+    border-radius: 10px;
+}
+
+footer {
+    border-bottom: 10px;
+    border: 5px solid black;
+    
+}
