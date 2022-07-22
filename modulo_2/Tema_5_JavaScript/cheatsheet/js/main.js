@@ -161,6 +161,16 @@ let person = {
     
 }
 
+
+
+//--------copiar objetos:------
+/*let obj1 = {property: 5};
+let obj2 = obj1; //no es una copia, no funciona con objetos
+
+obj2 = {...obj1};//COPIA SUPERFICIAL QUE USAREMOS PRACTICAMENTE SIEMPRE
+obj2 = JSON.parse(JSON.stringify(obj1)); //COPIA PROFUNDA O TOTAL*/
+//Lo tengo arriba con los arrays
+
 //Acceso por punto / Dot notation
 console.log(typeof person, person);
 console.log(`Se llama ${person.name} y tiene ${person.age} años y es ${person.blonde}`);
@@ -223,6 +233,7 @@ function Car (brand, color, weight, topSpeed){
     }
 }
 
+//Con esto creamos los elementos con el constructor, por eso le ponemos nombre a la constante y luego para crearlo usamos new y la palabra del objeto tal cual es:
 const car1 = new Car("Mercedes", "red", 2000,200);//la clave aquí está en la palabra "new" que es la que invoca a mi constructor de objetos
 const car2= new Car("Volvo", "white", 2500,180);
 const car3 = new Car("Volkswagen", "blue", 1500,175);
